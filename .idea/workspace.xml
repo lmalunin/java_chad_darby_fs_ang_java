@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="441bf1c7-0562-4d32-892a-c40e46ba6667" name="Default Changelist" comment="9.6">
-      <change afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/entity/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636026485062</updated>
-      <workItem from="1636026487187" duration="3098000" />
+      <workItem from="1636026487187" duration="3426000" />
     </task>
     <task id="LOCAL-00001" summary="9.6">
       <created>1636028890557</created>
@@ -133,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636029166691</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="9.6">
+      <created>1636029620741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636029620741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
