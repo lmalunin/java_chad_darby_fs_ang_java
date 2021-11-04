@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="441bf1c7-0562-4d32-892a-c40e46ba6667" name="Default Changelist" comment="9.7">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/entity/ProductCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/dao/ProductCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/dao/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/entity/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -59,7 +59,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.spring-boot">
+  <component name="RunManager" selected="Spring Boot.SpringBootEcommerceApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -119,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636026485062</updated>
-      <workItem from="1636026487187" duration="3976000" />
+      <workItem from="1636026487187" duration="5438000" />
     </task>
     <task id="LOCAL-00001" summary="9.6">
       <created>1636028890557</created>
@@ -149,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636029960018</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="9.7">
+      <created>1636030555603</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636030555603</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
