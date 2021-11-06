@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="441bf1c7-0562-4d32-892a-c40e46ba6667" name="Default Changelist" comment="10.3">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/common/product.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/common/product.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/product-list/product-list-table.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/product-list/product-list.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/product-list/product-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/product-list/product-list.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/product-list/product-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/product.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/product.service.ts" afterDir="false" />
+    <list default="true" id="441bf1c7-0562-4d32-892a-c40e46ba6667" name="Default Changelist" comment="10.9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/dao/ProductCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/dao/ProductCategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/dao/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/dao/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636026485062</updated>
       <workItem from="1636026487187" duration="8978000" />
-      <workItem from="1636193286637" duration="3442000" />
+      <workItem from="1636193286637" duration="4345000" />
     </task>
     <task id="LOCAL-00001" summary="9.6">
       <created>1636028890557</created>
@@ -224,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636194972339</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="10.9">
+      <created>1636197721344</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636197721344</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +239,7 @@
     <MESSAGE value="9.8" />
     <MESSAGE value="9.10" />
     <MESSAGE value="10.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="10.3" />
+    <MESSAGE value="10.9" />
+    <option name="LAST_COMMIT_MESSAGE" value="10.9" />
   </component>
 </project>
