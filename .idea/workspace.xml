@@ -4,9 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="441bf1c7-0562-4d32-892a-c40e46ba6667" name="Default Changelist" comment="9.8">
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/spring-boot-ecommerce/src/main/java/com/luv2code/ecommerce/config/MyDataRestConfig.java" afterDir="false" />
+    <list default="true" id="441bf1c7-0562-4d32-892a-c40e46ba6667" name="Default Changelist" comment="9.10">
+      <change afterPath="$PROJECT_DIR$/untitled/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +70,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/spring-boot-ecommerce" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.15174508" />
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
@@ -59,17 +85,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringBootEcommerceApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.Angular CLI Server (frontend)">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="Angular Application (untitled)" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
     </configuration>
     <configuration name="spring-boot" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -106,9 +137,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Angular CLI Server (frontend)" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server (untitled)" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/untitled/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Maven.spring-boot" />
       <item itemvalue="Spring Boot.SpringBootEcommerceApplication" />
+      <item itemvalue="JavaScript Debug.Angular Application (untitled)" />
+      <item itemvalue="npm.Angular CLI Server (untitled)" />
+      <item itemvalue="npm.Angular CLI Server (frontend)" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -119,7 +173,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636026485062</updated>
-      <workItem from="1636026487187" duration="6535000" />
+      <workItem from="1636026487187" duration="8978000" />
+      <workItem from="1636193286637" duration="756000" />
     </task>
     <task id="LOCAL-00001" summary="9.6">
       <created>1636028890557</created>
@@ -163,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636033578551</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="9.10">
+      <created>1636034865970</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636034865970</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,12 +241,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="9.6" />
     <MESSAGE value="9.7" />
     <MESSAGE value="9.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="9.8" />
+    <MESSAGE value="9.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="9.10" />
   </component>
 </project>
