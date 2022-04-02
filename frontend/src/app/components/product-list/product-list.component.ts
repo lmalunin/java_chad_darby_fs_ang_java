@@ -22,11 +22,10 @@ export class ProductListComponent implements OnInit {
   }
 
   listProducts() {
-
     const hasCategoryId: boolean = this.activatedRoute.snapshot.paramMap.has('id');
 
     if(hasCategoryId){
-      this.currentCategoryId = +!this.activatedRoute.snapshot.paramMap.get('id');
+      this.currentCategoryId = +this.activatedRoute.snapshot.paramMap.get('id');
     }else{
       this.currentCategoryId = 1;
     }
