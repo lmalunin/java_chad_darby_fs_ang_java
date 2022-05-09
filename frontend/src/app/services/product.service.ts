@@ -33,6 +33,10 @@ export class ProductService {
         return this.getProducts(searchUrl);
     }
 
+    getProduct(theProductId: number) {
+
+    }
+
     private getProducts(searchUrl: string) {
         return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
             map(response => response._embedded.products)
