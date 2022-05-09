@@ -33,8 +33,9 @@ export class ProductService {
         return this.getProducts(searchUrl);
     }
 
-    getProduct(theProductId: number) {
-
+    getProduct(theProductId: number): Observable<Product> {
+        const searchUrl = `${this.baseUrl}/${theProductId}`;
+        return this.httpClient.get<Product>(searchUrl);
     }
 
     private getProducts(searchUrl: string) {

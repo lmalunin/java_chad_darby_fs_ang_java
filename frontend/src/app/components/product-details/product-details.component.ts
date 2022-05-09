@@ -22,7 +22,7 @@ export class ProductDetailsComponent implements OnInit {
     }
 
     private handleProductDetails() {
-        const theProductId: number = this.activatedRoute.snapshot.paramMap.get('id');
+        const theProductId: number = +this.activatedRoute.snapshot.paramMap.get('id');
 
         this.productService.getProduct(theProductId)
             .subscribe(data => {
