@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -33,7 +34,8 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         BrowserModule,
         HttpClientModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        NgbModule
     ],
     providers: [ProductService],
     bootstrap: [AppComponent]
