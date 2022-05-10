@@ -21,6 +21,8 @@ export class ProductListComponent implements OnInit {
     thePageSize: number = 10;
     theTotalElements: number = 0;
 
+    previousKeyword: string = '';
+
     constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) {
     }
 
@@ -33,15 +35,13 @@ export class ProductListComponent implements OnInit {
     listProducts(page: number = 1) {
         this.searchMode = this.activatedRoute.snapshot.paramMap.has('keyword')
         if (this.searchMode) {
-            this.handleSearchProducts();
+            this.handleSearchProducts(page);
         } else {
             this.handleListProducts(page)
         }
     }
 
     handleListProducts(page: number) {
-
-        this.thePageNumber = page;
 
         const hasCategoryId: boolean = this.activatedRoute.snapshot.paramMap.has('id');
 
@@ -58,9 +58,9 @@ export class ProductListComponent implements OnInit {
         }
         this.previousCategoryId = this.currentCategoryId;
 
-        console.log(`currentCategoryId = ${this.currentCategoryId}, thePageNumber = ${this.thePageNumber}`);
+        console.log(`currentCategoryId = ${this.currentCategoryId}, thePageNumber = ${page}`);
 
-        this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryId)
+        this.productService.getProductListPaginate(page - 1, this.thePageSize, this.currentCategoryId)
             .subscribe(
                 this.processResult()
             );
@@ -76,13 +76,23 @@ export class ProductListComponent implements OnInit {
         this.listProducts();
     }
 
-    private handleSearchProducts() {
+    private handleSearchProducts(page: number) {
         const theKeyword: string = this.activatedRoute.snapshot.paramMap.get('keyword');
-        this.productService.searchProducts(theKeyword).subscribe(
-            data => {
-                this.products = data;
-            }
-        );
+
+        if (this.previousKeyword != theKeyword) {
+            this.thePageNumber = 1;
+        } else {
+
+        }
+
+        this.previousKeyword = theKeyword;
+
+        console.log(`theKeyword = ${theKeyword}, thePageNumber=${page} thePageSize=${this.thePageSize}`);
+
+        this.productService.searchProductsPaginate(page - 1, this.thePageSize, theKeyword)
+            .subscribe(
+                this.processResult()
+            );
     }
 
     private processResult() {

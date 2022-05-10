@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Product } from '../common/product';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -38,6 +38,13 @@ export class ProductService {
     searchProducts(theKeyword: string): Observable<Product[]> {
         const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
         return this.getProducts(searchUrl);
+    }
+
+    searchProductsPaginate(thePage: number, thePageSize: number, theKeyword: string): Observable<GetResponseProducts> {
+        const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`
+            + `&page=${thePage}&size=${thePageSize}`;
+
+        return this.httpClient.get<GetResponseProducts>(searchUrl);
     }
 
     getProduct(theProductId: number): Observable<Product> {
