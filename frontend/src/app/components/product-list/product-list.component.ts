@@ -15,8 +15,10 @@ export class ProductListComponent implements OnInit {
     previousCategoryId: number = 1;
     currentCategoryName: string = '';
     searchMode: boolean = false;
+
+    // new properties for pagination
     thePageNumber: number = 1;
-    thePageSize: number = 1;
+    thePageSize: number = 10;
     theTotalElements: number = 0;
 
     constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) {
@@ -24,20 +26,23 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit() {
         this.activatedRoute.paramMap.subscribe(_ => {
-            this.listProducts();
+            this.listProducts(1);
         })
     }
 
-    listProducts() {
+    listProducts(page: number) {
         this.searchMode = this.activatedRoute.snapshot.paramMap.has('keyword')
         if (this.searchMode) {
             this.handleSearchProducts();
         } else {
-            this.handleListProducts()
+            this.handleListProducts(page)
         }
     }
 
-    handleListProducts() {
+    handleListProducts(page: number) {
+
+        this.thePageNumber = page;
+
         const hasCategoryId: boolean = this.activatedRoute.snapshot.paramMap.has('id');
 
         if (hasCategoryId) {
@@ -55,9 +60,14 @@ export class ProductListComponent implements OnInit {
 
         console.log(`currentCategoryId = ${this.currentCategoryId}, thePageNumber = ${this.thePageNumber}`);
 
-        this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryId).subscribe(
-            this.processResult()
-        );
+        this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryId)
+            .subscribe(
+                this.processResult()
+            );
+    }
+
+    test(event: any) {
+        console.log(event);
     }
 
     private handleSearchProducts() {
