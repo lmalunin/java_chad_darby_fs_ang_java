@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/common/product';
 
@@ -30,7 +30,7 @@ export class ProductListComponent implements OnInit {
         })
     }
 
-    listProducts(page: number) {
+    listProducts(page: number = 1) {
         this.searchMode = this.activatedRoute.snapshot.paramMap.has('keyword')
         if (this.searchMode) {
             this.handleSearchProducts();
@@ -68,6 +68,12 @@ export class ProductListComponent implements OnInit {
 
     test(event: any) {
         console.log(event);
+    }
+
+    updatePageSize(eventPageSize: any) {
+        this.thePageSize = eventPageSize.target.value;
+        this.thePageNumber = 1;
+        this.listProducts();
     }
 
     private handleSearchProducts() {
