@@ -1,3 +1,4 @@
+import { HttpEvent } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -47,5 +48,13 @@ export class CheckoutComponent implements OnInit {
 
     onSubmit() {
         console.log(this.checkoutFormGroup.get('customer')?.value);
+    }
+
+    copyShippingAddressToBillingAddress(event: any) {
+        if (event.target.checked) {
+            this.checkoutFormGroup.controls['billingAddress'].setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
+        } else {
+            this.checkoutFormGroup.controls['billingAddress'].reset();
+        }
     }
 }
