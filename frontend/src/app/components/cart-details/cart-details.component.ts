@@ -20,6 +20,10 @@ export class CartDetailsComponent implements OnInit {
         this.listCartDetails();
     }
 
+    incrementQuantity(theCartItem: CartItem) {
+        this._cartService.addToCart(theCartItem);
+    }
+
     private listCartDetails() {
         this.cartItems = this._cartService.cartItems;
         this._cartService.totalPrice$.subscribe(value => this.totalPrice = value);
