@@ -8,8 +8,8 @@ import { CartItem } from '../common/cart-item';
 export class CartService {
 
     cartItems: CartItem[] = [];
-    totalPrice: Subject<number> = new Subject<number>();
-    totalQuantity: Subject<number> = new Subject<number>();
+    totalPrice$: Subject<number> = new Subject<number>();
+    totalQuantity$: Subject<number> = new Subject<number>();
 
     constructor() {
     }
@@ -46,8 +46,8 @@ export class CartService {
             totalQuantityValue += currentCartItem.quantity;
         }
 
-        this.totalPrice.next(totalPriceValue);
-        this.totalQuantity.next(totalQuantityValue);
+        this.totalPrice$.next(totalPriceValue);
+        this.totalQuantity$.next(totalQuantityValue);
 
 
         this.logCartData(totalPriceValue, totalQuantityValue);
