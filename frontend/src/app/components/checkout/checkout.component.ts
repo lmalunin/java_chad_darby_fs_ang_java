@@ -19,7 +19,29 @@ export class CheckoutComponent implements OnInit {
                 firstName: [''],
                 lastName: [''],
                 email: ['']
-            })
+            }),
+            shippingAddress: this._formByilder.group({
+                street: [''],
+                city: [''],
+                state: [''],
+                country: [''],
+                zipCode: [''],
+            }),
+            billingAddress: this._formByilder.group({
+                street: [''],
+                city: [''],
+                state: [''],
+                country: [''],
+                zipCode: [''],
+            }),
+            creditCard: this._formByilder.group({
+                cardType: [''],
+                nameOnCard: [''],
+                cardNumber: [''],
+                securityCode: [''],
+                expirationMonth: [''],
+                expirationYear: [''],
+            }),
         })
     }
 
