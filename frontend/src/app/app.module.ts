@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -43,7 +44,8 @@ const routes: Routes = [
         BrowserModule,
         HttpClientModule,
         FontAwesomeModule,
-        NgbModule
+        NgbModule,
+        ReactiveFormsModule
     ],
     providers: [ProductService],
     bootstrap: [AppComponent]
