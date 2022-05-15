@@ -76,6 +76,10 @@ export class ProductListComponent implements OnInit {
         this.listProducts();
     }
 
+    addToCart(tempProduct: Product) {
+        console.log(tempProduct);
+    }
+
     private handleSearchProducts(page: number) {
         const theKeyword: string = this.activatedRoute.snapshot.paramMap.get('keyword');
 
