@@ -24,11 +24,8 @@ export class CartDetailsComponent implements OnInit {
         this._cartService.addToCart(theCartItem);
     }
 
-    decrementQuantity(tempCartItem: CartItem) {
-        let filteredItems = this._cartService.cartItems.filter(value => value.id != tempCartItem.id);
-        this._cartService.cartItems = filteredItems;
-
-        this._cartService.computeCartTotals();
+    decrementQuantity(theCartItem: CartItem) {
+        this._cartService.decrementQuantity(theCartItem);
     }
 
     private listCartDetails() {
