@@ -28,6 +28,10 @@ export class CartDetailsComponent implements OnInit {
         this._cartService.decrementQuantity(theCartItem);
     }
 
+    remove(tempCartItem: CartItem) {
+        this._cartService.remove(tempCartItem);
+    }
+
     private listCartDetails() {
         this.cartItems = this._cartService.cartItems;
         this._cartService.totalPrice$.subscribe(value => this.totalPrice = value);
