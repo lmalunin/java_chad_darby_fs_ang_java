@@ -11,7 +11,7 @@ import { State } from '../common/state';
 })
 export class Luv2ShopFormService {
 
-    private countrtiesUrl: string = 'http://localhost:8080/api/countires';
+    private countrtiesUrl: string = 'http://localhost:8080/api/countries';
     private statesUrl: string = 'http://localhost:8080/api/states';
 
     constructor(private _httpClient: HttpClient) {

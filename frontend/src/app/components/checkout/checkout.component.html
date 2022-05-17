@@ -52,7 +52,10 @@
                             <div class="input-space">
                                 <select formControlName="country"
                                         name="">
-                                    <option>TODO</option>
+                                    <option *ngFor="let country of countries"
+                                            ngValue="country">
+                                        {{ country.name }}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -124,7 +127,10 @@
                             <div class="input-space">
                                 <select formControlName="country"
                                         name="">
-                                    <option>TODO</option>
+                                    <option *ngFor="let country of countries"
+                                            ngValue="country">
+                                        {{ country.name }}
+                                    </option>
                                 </select>
                             </div>
                         </div>
