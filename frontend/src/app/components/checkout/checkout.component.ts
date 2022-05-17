@@ -108,7 +108,6 @@ export class CheckoutComponent implements OnInit {
     }
 
     getStates(formGroupName: string) {
-
         const formGroup = this.checkoutFormGroup.get(formGroupName);
         const countryCode = formGroup?.value.country.code;
         const countryName = formGroup?.value.country.name;
@@ -120,6 +119,8 @@ export class CheckoutComponent implements OnInit {
                 } else if (formGroupName === 'billingAddress') {
                     this.billingAddressStates = value;
                 }
+
+                formGroup.get('state').setValue(value[0]);
             });
     }
 }
