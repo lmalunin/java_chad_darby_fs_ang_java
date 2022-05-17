@@ -20,7 +20,9 @@ export class CheckoutComponent implements OnInit {
     creditCardMonths: number[] = [];
 
     countries: Country[] = [];
-    states: State[] = [];
+
+    shippingAddressStates: State[] = [];
+    billingAddressStates: State[] = [];
 
     constructor(private _formByilder: FormBuilder, private _luv2ShopFormService: Luv2ShopFormService) {
     }
@@ -103,5 +105,21 @@ export class CheckoutComponent implements OnInit {
 
         this._luv2ShopFormService.getCreditCardMonths(startMonth)
             .subscribe(value => this.creditCardMonths = value);
+    }
+
+    getStates(formGroupName: string) {
+
+        const formGroup = this.checkoutFormGroup.get(formGroupName);
+        const countryCode = formGroup?.value.country.code;
+        const countryName = formGroup?.value.country.name;
+
+        this._luv2ShopFormService.getStates(countryCode)
+            .subscribe(value => {
+                if (formGroupName === 'shippingAddress') {
+                    this.shippingAddressStates = value;
+                } else if (formGroupName === 'billingAddress') {
+                    this.billingAddressStates = value;
+                }
+            });
     }
 }

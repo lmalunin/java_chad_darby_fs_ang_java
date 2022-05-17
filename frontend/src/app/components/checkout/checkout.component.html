@@ -50,7 +50,8 @@
                         </div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <select formControlName="country"
+                                <select (change)="getStates('shippingAddress')"
+                                        formControlName="country"
                                         name="">
                                     <option *ngFor="let country of countries"
                                             ngValue="country">
@@ -89,7 +90,10 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="state">
-                                    <option>TODO</option>
+                                    <option *ngFor="let state of shippingAddressStates"
+                                            ngValue="state">
+                                        {{ state }}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -125,7 +129,8 @@
                         </div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <select formControlName="country"
+                                <select (change)="getStates('billingAddress')"
+                                        formControlName="country"
                                         name="">
                                     <option *ngFor="let country of countries"
                                             ngValue="country">
@@ -164,7 +169,10 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="state">
-                                    <option>TODO</option>
+                                    <option *ngFor=" let state of billingAddressStates"
+                                            ngValue="state">
+                                        {{ state }}
+                                    </option>
                                 </select>
                             </div>
                         </div>
