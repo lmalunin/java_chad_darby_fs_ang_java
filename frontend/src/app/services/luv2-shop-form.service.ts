@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class Luv2ShopFormService {
 
-    private counrtiesUrl: string = 'http://localhost:8080/api/countires';
+    private countrtiesUrl: string = 'http://localhost:8080/api/countires';
     private statesUrl: string = 'http://localhost:8080/api/states';
 
     constructor(private _httpClient: HttpClient) {
