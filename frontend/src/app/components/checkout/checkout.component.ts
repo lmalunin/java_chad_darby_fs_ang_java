@@ -89,6 +89,21 @@ export class CheckoutComponent implements OnInit {
     /**
      * Credit Card
      **/
+    get creditCardType() {
+        return this.checkoutFormGroup.get('creditCard.cardType');
+    }
+
+    get creditCardNameOnCard() {
+        return this.checkoutFormGroup.get('creditCard.nameOnCard');
+    }
+
+    get creditCardNumber() {
+        return this.checkoutFormGroup.get('creditCard.cardNumber');
+    }
+
+    get creditCardSecurityCode() {
+        return this.checkoutFormGroup.get('creditCard.securityCode');
+    }
 
     ngOnInit(): void {
         this.checkoutFormGroup = this._formByilder.group({
@@ -125,10 +140,14 @@ export class CheckoutComponent implements OnInit {
                     [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
             }),
             creditCard: this._formByilder.group({
-                cardType: [''],
-                nameOnCard: [''],
-                cardNumber: [''],
-                securityCode: [''],
+                cardType: new FormControl('',
+                    [Validators.required]),
+                nameOnCard: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
+                cardNumber: new FormControl('',
+                    [Validators.required, Validators.pattern('[0-9]{16}')]),
+                securityCode: new FormControl('',
+                    [Validators.required, Validators.pattern('[0-9]{3}')]),
                 expirationMonth: [''],
                 expirationYear: [''],
             }),
