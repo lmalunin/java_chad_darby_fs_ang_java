@@ -40,6 +40,9 @@ export class CheckoutComponent implements OnInit {
         return this.checkoutFormGroup.get('customer.email');
     }
 
+    /**
+     * shippingAddress
+     **/
     get shippingAddressStreet() {
         return this.checkoutFormGroup.get('shippingAddress.street');
     }
@@ -58,6 +61,29 @@ export class CheckoutComponent implements OnInit {
 
     get shippingAddressCountry() {
         return this.checkoutFormGroup.get('shippingAddress.country');
+    }
+
+    /**
+     * billingAddress
+     **/
+    get billingAddressStreet() {
+        return this.checkoutFormGroup.get('billingAddress.street');
+    }
+
+    get billingAddressCity() {
+        return this.checkoutFormGroup.get('billingAddress.city');
+    }
+
+    get billingAddressState() {
+        return this.checkoutFormGroup.get('billingAddress.state');
+    }
+
+    get billingAddressZipCode() {
+        return this.checkoutFormGroup.get('billingAddress.zipCode');
+    }
+
+    get billingAddressCountry() {
+        return this.checkoutFormGroup.get('billingAddress.country');
     }
 
     ngOnInit(): void {
