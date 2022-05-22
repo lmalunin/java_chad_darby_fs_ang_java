@@ -27,6 +27,18 @@ export class CheckoutComponent implements OnInit {
     constructor(private _formByilder: FormBuilder, private _luv2ShopFormService: Luv2ShopFormService) {
     }
 
+    get firstName() {
+        return this.checkoutFormGroup.get('customer.firstName');
+    }
+
+    get lastName() {
+        return this.checkoutFormGroup.get('customer.lastName');
+    }
+
+    get email() {
+        return this.checkoutFormGroup.get('customer.email');
+    }
+
     ngOnInit(): void {
         this.checkoutFormGroup = this._formByilder.group({
             customer: this._formByilder.group({
