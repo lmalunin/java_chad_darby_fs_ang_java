@@ -351,7 +351,7 @@
                                     <div *ngIf="creditCardNumber.errors['required'] || creditCardNumber.errors['notOnlyWhiteSpace']">
                                         Card number is required
                                     </div>
-                                    <div *ngIf="creditCardNumber.errors['minlength']">
+                                    <div *ngIf="creditCardNumber.errors['pattern']">
                                         Card number on card must be at lest 16 characters long
                                     </div>
                                 </div>
@@ -371,7 +371,7 @@
                                     <div *ngIf="creditCardSecurityCode.errors['required'] || creditCardSecurityCode.errors['notOnlyWhiteSpace']">
                                         Security code is required
                                     </div>
-                                    <div *ngIf="creditCardSecurityCode.errors['minlength']">
+                                    <div *ngIf="creditCardSecurityCode.errors['pattern']">
                                         Security code must be at lest 3 characters long
                                     </div>
                                 </div>
