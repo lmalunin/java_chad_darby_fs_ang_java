@@ -41,7 +41,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     /**
-     * shippingAddress
+     * Shipping Address
      **/
     get shippingAddressStreet() {
         return this.checkoutFormGroup.get('shippingAddress.street');
@@ -64,7 +64,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     /**
-     * billingAddress
+     * Billing Address
      **/
     get billingAddressStreet() {
         return this.checkoutFormGroup.get('billingAddress.street');
@@ -85,6 +85,10 @@ export class CheckoutComponent implements OnInit {
     get billingAddressCountry() {
         return this.checkoutFormGroup.get('billingAddress.country');
     }
+
+    /**
+     * Credit Card
+     * */
 
     ngOnInit(): void {
         this.checkoutFormGroup = this._formByilder.group({
