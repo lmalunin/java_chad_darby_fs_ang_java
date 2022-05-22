@@ -88,7 +88,7 @@ export class CheckoutComponent implements OnInit {
 
     /**
      * Credit Card
-     * */
+     **/
 
     ngOnInit(): void {
         this.checkoutFormGroup = this._formByilder.group({
