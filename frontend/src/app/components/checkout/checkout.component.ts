@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Country } from '../../common/country';
 import { State } from '../../common/state';
 import { Luv2ShopFormService } from '../../services/luv2-shop-form.service';
+import { Luv2ShopValidators } from '../../validators/luv2-shop-validators';
 
 @Component({
     selector: 'app-checkout',
@@ -42,9 +43,12 @@ export class CheckoutComponent implements OnInit {
     ngOnInit(): void {
         this.checkoutFormGroup = this._formByilder.group({
             customer: this._formByilder.group({
-                firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-                lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-                email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+                firstName: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
+                lastName: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
+                email: new FormControl('',
+                    [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'), Luv2ShopValidators.notOnlyWhiteSpace]),
             }),
             shippingAddress: this._formByilder.group({
                 street: [''],
