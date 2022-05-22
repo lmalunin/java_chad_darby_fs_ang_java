@@ -41,23 +41,23 @@ export class CheckoutComponent implements OnInit {
     }
 
     get shippingAddressStreet() {
-        return this.checkoutFormGroup.get('shippingAddressS.street');
+        return this.checkoutFormGroup.get('shippingAddress.street');
     }
 
     get shippingAddressCity() {
-        return this.checkoutFormGroup.get('shippingAddressS.city');
+        return this.checkoutFormGroup.get('shippingAddress.city');
     }
 
     get shippingAddressState() {
-        return this.checkoutFormGroup.get('shippingAddressS.state');
+        return this.checkoutFormGroup.get('shippingAddress.state');
     }
 
     get shippingAddressZipCode() {
-        return this.checkoutFormGroup.get('shippingAddressS.zipCode');
+        return this.checkoutFormGroup.get('shippingAddress.zipCode');
     }
 
     get shippingAddressCountry() {
-        return this.checkoutFormGroup.get('shippingAddressS.country');
+        return this.checkoutFormGroup.get('shippingAddress.country');
     }
 
     ngOnInit(): void {
