@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Country } from '../../common/country';
 import { State } from '../../common/state';
 import { Luv2ShopFormService } from '../../services/luv2-shop-form.service';
@@ -93,6 +93,10 @@ export class CheckoutComponent implements OnInit {
 
     onSubmit() {
         console.log(this.checkoutFormGroup.get('customer')?.value);
+
+        if (this.checkoutFormGroup.invalid) {
+            this.checkoutFormGroup.markAllAsTouched();
+        }
     }
 
     copyShippingAddressToBillingAddress(event: any) {
@@ -138,5 +142,9 @@ export class CheckoutComponent implements OnInit {
 
                 formGroup.get('state').setValue(value[0]);
             });
+    }
+
+    chanageTest(firstName: AbstractControl) {
+        console.log(firstName);
     }
 }
