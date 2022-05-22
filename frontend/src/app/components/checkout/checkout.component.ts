@@ -40,6 +40,26 @@ export class CheckoutComponent implements OnInit {
         return this.checkoutFormGroup.get('customer.email');
     }
 
+    get shippingAddressStreet() {
+        return this.checkoutFormGroup.get('shippingAddressS.street');
+    }
+
+    get shippingAddressCity() {
+        return this.checkoutFormGroup.get('shippingAddressS.city');
+    }
+
+    get shippingAddressState() {
+        return this.checkoutFormGroup.get('shippingAddressS.state');
+    }
+
+    get shippingAddressZipCode() {
+        return this.checkoutFormGroup.get('shippingAddressS.zipCode');
+    }
+
+    get shippingAddressCountry() {
+        return this.checkoutFormGroup.get('shippingAddressS.country');
+    }
+
     ngOnInit(): void {
         this.checkoutFormGroup = this._formByilder.group({
             customer: this._formByilder.group({
@@ -51,18 +71,28 @@ export class CheckoutComponent implements OnInit {
                     [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'), Luv2ShopValidators.notOnlyWhiteSpace]),
             }),
             shippingAddress: this._formByilder.group({
-                street: [''],
-                city: [''],
-                state: [''],
-                country: [''],
-                zipCode: [''],
+                street: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
+                city: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
+                state: new FormControl('',
+                    [Validators.required]),
+                country: new FormControl('',
+                    [Validators.required]),
+                zipCode: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
             }),
             billingAddress: this._formByilder.group({
-                street: [''],
-                city: [''],
-                state: [''],
-                country: [''],
-                zipCode: [''],
+                street: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
+                city: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
+                state: new FormControl('',
+                    [Validators.required]),
+                country: new FormControl('',
+                    [Validators.required]),
+                zipCode: new FormControl('',
+                    [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhiteSpace]),
             }),
             creditCard: this._formByilder.group({
                 cardType: [''],
