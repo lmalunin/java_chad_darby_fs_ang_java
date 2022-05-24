@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Country } from '../../common/country';
 import { State } from '../../common/state';
+import { CartService } from '../../services/cart.service';
 import { Luv2ShopFormService } from '../../services/luv2-shop-form.service';
 import { Luv2ShopValidators } from '../../validators/luv2-shop-validators';
 
@@ -25,7 +26,7 @@ export class CheckoutComponent implements OnInit {
     shippingAddressStates: State[] = [];
     billingAddressStates: State[] = [];
 
-    constructor(private _formByilder: FormBuilder, private _luv2ShopFormService: Luv2ShopFormService) {
+    constructor(private _formByilder: FormBuilder, private _luv2ShopFormService: Luv2ShopFormService, private _cartService: CartService) {
     }
 
     get firstName() {
@@ -106,6 +107,9 @@ export class CheckoutComponent implements OnInit {
     }
 
     ngOnInit(): void {
+
+        this.reviewCartDetails();
+
         this.checkoutFormGroup = this._formByilder.group({
             customer: this._formByilder.group({
                 firstName: new FormControl('',
@@ -229,5 +233,10 @@ export class CheckoutComponent implements OnInit {
 
     chanageTest(firstName: AbstractControl) {
         console.log(firstName);
+    }
+
+    private reviewCartDetails() {
+        this._cartService.totalQuantity$.subscribe(value => this.totalQuantity = value);
+        this._cartService.totalPrice$.subscribe(value => this.totalPrice = value);
     }
 }
