@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Country } from '../../common/country';
+import { Order } from '../../common/order';
+import { OrderItem } from '../../common/order-item';
 import { State } from '../../common/state';
 import { CartService } from '../../services/cart.service';
 import { CheckoutService } from '../../services/checkout.service';
@@ -190,21 +192,31 @@ export class CheckoutComponent implements OnInit {
             return;
         }
 
-        // set up orderr
+        // set up order
+        let order = new Order();
+        order.totalPrice = this.totalPrice;
+        order.totalQuantity = this.totalQuantity;
 
         // get cart items
+        const cartItems = this._cartService.cartItems;
 
         // create orderItems from cartItems
+        let orderItems: OrderItem[] = cartItems.map(value => new OrderItem(value));
 
         // set up purchase
 
+
         // populate purchase - customer
+
 
         // populate purchase - shipping address
 
+
         // populate purchase - billing address
 
+
         // populate purchase - order and orderItems
+
 
         // call REST API via the CheckoutService
 
