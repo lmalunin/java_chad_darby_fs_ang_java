@@ -225,10 +225,24 @@ export class CheckoutComponent implements OnInit {
         purchase.billingAddress.country = billingCountry.name;
 
         // populate purchase - order and orderItems
-
+        purchase.order = order;
+        purchase.orderItems = orderItems;
 
         // call REST API via the CheckoutService
+        this._checkoutService.placeOrder(purchase)
+            .subscribe(
+                {
+                    next: response => {
+                        alert(`Your order has been received. \nOrder tracking number: ${response.orderTrackingNumber}`);
 
+                        // reset cart
+                        this.resetCart();
+                    },
+                    error: err => {
+                        alert(`There was an error: ${err.message}`);
+                    }
+                }
+            )
     }
 
     copyShippingAddressToBillingAddress(event: any) {
@@ -283,5 +297,19 @@ export class CheckoutComponent implements OnInit {
     private reviewCartDetails() {
         this._cartService.totalQuantity$.subscribe(value => this.totalQuantity = value);
         this._cartService.totalPrice$.subscribe(value => this.totalPrice = value);
+    }
+
+    private resetCart() {
+
+        // reset cart data
+        this._cartService.cartItems = [];
+        this._cartService.totalPrice$.next(0);
+        this._cartService.totalQuantity$.next(0);
+
+        // reset the form
+        this.checkoutFormGroup.reset();
+
+        // navigate back to the products page
+        this._router.navigateByUrl('/products');
     }
 }
