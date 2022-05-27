@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Country } from '../../common/country';
 import { State } from '../../common/state';
 import { CartService } from '../../services/cart.service';
+import { CheckoutService } from '../../services/checkout.service';
 import { Luv2ShopFormService } from '../../services/luv2-shop-form.service';
 import { Luv2ShopValidators } from '../../validators/luv2-shop-validators';
 
@@ -26,7 +28,9 @@ export class CheckoutComponent implements OnInit {
     shippingAddressStates: State[] = [];
     billingAddressStates: State[] = [];
 
-    constructor(private _formByilder: FormBuilder, private _luv2ShopFormService: Luv2ShopFormService, private _cartService: CartService) {
+    constructor(private _formByilder: FormBuilder, private _luv2ShopFormService: Luv2ShopFormService,
+                private _cartService: CartService, private _checkoutService: CheckoutService,
+                private _router: Router) {
     }
 
     get firstName() {
@@ -183,7 +187,27 @@ export class CheckoutComponent implements OnInit {
 
         if (this.checkoutFormGroup.invalid) {
             this.checkoutFormGroup.markAllAsTouched();
+            return;
         }
+
+        // set up orderr
+
+        // get cart items
+
+        // create orderItems from cartItems
+
+        // set up purchase
+
+        // populate purchase - customer
+
+        // populate purchase - shipping address
+
+        // populate purchase - billing address
+
+        // populate purchase - order and orderItems
+
+        // call REST API via the CheckoutService
+
     }
 
     copyShippingAddressToBillingAddress(event: any) {
