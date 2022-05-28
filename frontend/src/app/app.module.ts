@@ -2,10 +2,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
+import { OKTA_CONFIG, OktaAuthModule, OktaCallbackComponent } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
 import { AppComponent } from './app.component';
@@ -22,6 +22,8 @@ import myAppConfig from './config/my-app-config';
 import { ProductService } from './services/product.service';
 
 const routes: Routes = [
+    { path: 'login/callback', component: OktaCallbackComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'checkout', component: CheckoutComponent },
     { path: 'cart-details', component: CartDetailsComponent },
     { path: 'products/:id', component: ProductDetailsComponent },
@@ -33,6 +35,12 @@ const routes: Routes = [
     { path: '**', redirectTo: '/products', pathMatch: 'full' },
 ];
 
+const oktaConfig = Object.assign({
+    onAuthRequired: (injector) => {
+        const router = injector.get(Router);
+        router.navigate(['/login']);
+    }
+}, myAppConfig.oidc);
 const oktaAuth = new OktaAuth(myAppConfig.oidc);
 
 @NgModule({
