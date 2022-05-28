@@ -1,22 +1,25 @@
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
+import { OktaAuth } from '@okta/okta-auth-js';
 
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ProductService } from './services/product.service';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
-import { SearchComponent } from './components/search/search.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { LoginComponent } from './components/login/login.component';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { SearchComponent } from './components/search/search.component';
+import myAppConfig from './config/my-app-config';
+import { ProductService } from './services/product.service';
 
 const routes: Routes = [
     { path: 'checkout', component: CheckoutComponent },
@@ -29,6 +32,8 @@ const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
     { path: '**', redirectTo: '/products', pathMatch: 'full' },
 ];
+
+const oktaAuth = new OktaAuth(myAppConfig.oidc);
 
 @NgModule({
     declarations: [
@@ -49,9 +54,13 @@ const routes: Routes = [
         HttpClientModule,
         FontAwesomeModule,
         NgbModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        OktaAuthModule
     ],
-    providers: [ProductService],
+    providers: [ProductService, {
+        provide: OKTA_CONFIG,
+        useValue: { oktaAuth }
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule {
