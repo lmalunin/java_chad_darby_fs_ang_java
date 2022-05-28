@@ -35,13 +35,16 @@ const routes: Routes = [
     { path: '**', redirectTo: '/products', pathMatch: 'full' },
 ];
 
+declare var injector: any
+
 const oktaConfig = Object.assign({
     onAuthRequired: (injector) => {
         const router = injector.get(Router);
         router.navigate(['/login']);
     }
 }, myAppConfig.oidc);
-const oktaAuth = new OktaAuth(myAppConfig.oidc);
+
+const oktaAuth = new OktaAuth(oktaConfig);
 
 @NgModule({
     declarations: [
